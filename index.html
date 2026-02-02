@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonia Catic | Candidature Assistante Communication & Admin — FIT</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0F4C81;
+            --primary-light: #1565A8;
+            --accent: #00A676;
+            --accent-light: #E8F5E9;
+            --orange: #FF6B35;
+            --bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text: #1E293B;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 60px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.7; transform: scale(1.2); }
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        .header-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+
+        .header-meta {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 14px;
+        }
+
+        .header-meta span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+        }
+
+        /* INTRO CARD */
+        .intro-card {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 30px;
+            padding: 40px;
+            align-items: center;
+        }
+
+        .intro-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 4px solid var(--bg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .intro-content p {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .intro-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .tag.green {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .tag.outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-light);
+        }
+
+        /* SECTIONS */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+        }
+
+        /* MATCH SECTION */
+        .match-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .match-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s;
+        }
+
+        .match-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 166, 118, 0.1);
+        }
+
+        .match-card .need {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .match-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .match-card p {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .match-card .check {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* EXPERIENCE */
+        .exp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .exp-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 20px;
+            align-items: start;
+        }
+
+        .exp-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .exp-card .company {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .exp-card .tasks {
+            font-size: 13px;
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .exp-date {
+            background: var(--bg);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .skill-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .skill-card h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .skill-card p {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* LANGUES */
+        .lang-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .lang-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .lang-flag {
+            font-size: 24px;
+        }
+
+        .lang-info .name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .lang-info .level {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* FORMATION */
+        .formation-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .formation-item {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .formation-item h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .formation-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* MOTIVATION */
+        .motivation-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+        }
+
+        .motivation-box h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .motivation-box p {
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.95;
+            margin-bottom: 16px;
+        }
+
+        .motivation-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .motivation-point {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .motivation-point .icon {
+            font-size: 20px;
+        }
+
+        .motivation-point span {
+            font-size: 14px;
+        }
+
+        /* CTA */
+        .cta {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            margin: 40px 0 60px;
+            border: 1px solid var(--border);
+        }
+
+        .cta h2 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 32px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #008F63;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+
+        .cta-info {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--text-light);
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            padding: 30px 0;
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .intro-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .intro-photo {
+                margin: 0 auto;
+            }
+
+            .intro-tags {
+                justify-content: center;
+            }
+
+            .match-grid,
+            .skills-grid,
+            .motivation-points {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-card {
+                grid-template-columns: 1fr;
+            }
+
+            .exp-date {
+                width: fit-content;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="header-badge">
+                <span class="dot"></span>
+                Candidature — Assistante Communication & Admin (40%)
+            </div>
+            <h1>Bonjour<span>le serice RH pour la Fondation de l'Innovation et de la Technologie</span></h1>
+            <p class="header-subtitle">+7 ans d'expérience en communication digitale et administration en Suisse. Prête à contribuer à l'essor des start-ups romandes innovantes.</p>
+            <div class="header-meta">
+                <span>📍 Frontalière FR/CH — Permis G</span>
+                <span>💼 Disponible immédiatement</span>
+                <span>🏠 Télétravail hybride OK</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- INTRO CARD -->
+    <div class="container">
+        <div class="intro-card">
+            <img src="https://cheetahbestbooks-star.github.io/poste_admin/photosonia.jpg" alt="Sonia Catic" class="intro-photo">
+            <div class="intro-content">
+                <h2>Sonia Catic</h2>
+                <p>Communication digitale • Rédaction FR/EN • Administration • Réseaux sociaux • Organisation d'événements</p>
+                <div class="intro-tags">
+                    <span class="tag green">✓ Permis G valide</span>
+                    <span class="tag green">✓ Français natif</span>
+                    <span class="tag green">✓ Anglais C1</span>
+                    <span class="tag outline">📧 sonia.catic@hotmail.com</span>
+                    <span class="tag outline">📞 078 777 79 78</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MATCH SECTION -->
+    <div class="container">
+        <section class="section">
+            <div class="section-title">🎯 Pourquoi je corresponds au poste</div>
+            <div class="match-grid">
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Rédaction de contenu FR/EN</h3>
+                    <p><span class="check">✓</span> Master en Communication & Digital Marketing (EFAP Paris). Rédaction d'articles web, newsletters, communiqués depuis 7+ ans. Bilingue français/anglais.</p>
+                </div>
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Création contenu réseaux sociaux</h3>
+                    <p><span class="check">✓</span> Gestion LinkedIn & Instagram pro. Création visuels (Canva, CapCut). +60% d'engagement obtenu chez Buzz Beauty.</p>
+                </div>
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Suivi administratif de projets</h3>
+                    <p><span class="check">✓</span> Coordination de dossiers, rédaction PV, organisation comités. 4 ans d'expérience admin en Suisse (Sandoz, Plastrub).</p>
+                </div>
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Organisation d'événements</h3>
+                    <p><span class="check">✓</span> Coordination logistique, gestion partenaires, suivi planning. Expérience événementiel chez Buzz Beauty et en freelance.</p>
+                </div>
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Mise à jour site internet</h3>
+                    <p><span class="check">✓</span> À l'aise avec les CMS (WordPress, Shopify). Intégration de contenus, mise en page, optimisation SEO de base.</p>
+                </div>
+                <div class="match-card">
+                    <div class="need">Vous cherchez</div>
+                    <h3>Autonomie & initiative</h3>
+                    <p><span class="check">✓</span> 3 ans en freelance 100% remote. Habituée à gérer mes priorités, proposer des améliorations, livrer dans les délais.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="container">
+        <section class="section" style="padding-top: 0;">
+            <div class="section-title">💼 Parcours professionnel</div>
+            <div class="exp-list">
+                <div class="exp-card">
+                    <div>
+                        <h3>Freelance — Communication & Automation</h3>
+                        <p class="company">Clients B2C & B2B • Remote</p>
+                        <p class="tasks">Rédaction de contenus web et emails, création visuels réseaux sociaux, gestion de projets clients, automatisation administrative (Airtable, Make). Gestion autonome multi-clients.</p>
+                    </div>
+                    <span class="exp-date">2022 → Présent</span>
+                </div>
+                <div class="exp-card">
+                    <div>
+                        <h3>Coordinatrice Digitale & Ventes</h3>
+                        <p class="company">Buzz Beauty — Plateforme beauté/bien-être • Fribourg</p>
+                        <p class="tasks">Stratégie réseaux sociaux (+60% engagement), rédaction newsletters et contenus web, coordination partenaires, organisation événements promo, SAV clients.</p>
+                    </div>
+                    <span class="exp-date">2019 → 2021</span>
+                </div>
+                <div class="exp-card">
+                    <div>
+                        <h3>Administratrice des ventes</h3>
+                        <p class="company">Plastrub SA • Fribourg</p>
+                        <p class="tasks">Gestion administrative commerciale, suivi dossiers clients internationaux, coordination logistique, rédaction documents, reporting.</p>
+                    </div>
+                    <span class="exp-date">2017 → 2019</span>
+                </div>
+                <div class="exp-card">
+                    <div>
+                        <h3>Collaboratrice Achat/Vente</h3>
+                        <p class="company">Sandoz Fils SA • Fribourg</p>
+                        <p class="tasks">Administration des ventes, suivi commandes, relation fournisseurs, PV de réunions, reporting direction.</p>
+                    </div>
+                    <span class="exp-date">2015 → 2017</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="container">
+        <section class="section" style="padding-top: 0;">
+            <div class="section-title">🛠️ Compétences clés</div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">✍️</div>
+                    <h4>Rédaction web</h4>
+                    <p>Articles, interviews, communiqués, newsletters</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h4>Réseaux sociaux</h4>
+                    <p>LinkedIn, Instagram, création de contenus</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h4>Création visuels</h4>
+                    <p>Canva, CapCut, montage vidéo simple</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h4>Gestion site web</h4>
+                    <p>WordPress, CMS, mise à jour contenus</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📋</div>
+                    <h4>Admin & organisation</h4>
+                    <p>Suivi projets, PV, coordination, planning</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h4>Outils digitaux</h4>
+                    <p>Suite Office, Google, Airtable, Make</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LANGUES -->
+    <div class="container">
+        <section class="section" style="padding-top: 0;">
+            <div class="section-title">🌍 Langues</div>
+            <div class="lang-grid">
+                <div class="lang-item">
+                    <span class="lang-flag">🇫🇷</span>
+                    <div class="lang-info">
+                        <div class="name">Français</div>
+                        <div class="level">Langue maternelle</div>
+                    </div>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-flag">🇬🇧</span>
+                    <div class="lang-info">
+                        <div class="name">Anglais</div>
+                        <div class="level">C1 — Courant professionnel</div>
+                    </div>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-flag">🇩🇪</span>
+                    <div class="lang-info">
+                        <div class="name">Allemand</div>
+                        <div class="level">B1 — Intermédiaire</div>
+                    </div>
+                </div>
+                <div class="lang-item">
+                    <span class="lang-flag">🇪🇸</span>
+                    <div class="lang-info">
+                        <div class="name">Espagnol</div>
+                        <div class="level">B2</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FORMATION -->
+    <div class="container">
+        <section class="section" style="padding-top: 0;">
+            <div class="section-title">🎓 Formation</div>
+            <div class="formation-list">
+                <div class="formation-item">
+                    <div>
+                        <h4>Master 1 Communication & Digital Marketing</h4>
+                        <p>EFAP Paris — École des métiers de la communication</p>
+                    </div>
+                </div>
+                <div class="formation-item">
+                    <div>
+                        <h4>Bachelor Arts & Sciences Humaines</h4>
+                        <p>Option Journalisme — Université de Nice</p>
+                    </div>
+                </div>
+                <div class="formation-item">
+                    <div>
+                        <h4>Baccalauréat Littéraire</h4>
+                        <p>Lycée Bristol, Cannes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- MOTIVATION -->
+    <div class="container">
+        <section class="section" style="padding-top: 0;">
+            <div class="motivation-box">
+                <h3>💡 Pourquoi la FIT m'intéresse</h3>
+                <p>Accompagner des start-ups innovantes, c'est contribuer à façonner l'économie de demain. Après 7 ans dans le digital et l'administration en Suisse, je cherche un poste qui allie <strong>communication</strong>, <strong>rédaction</strong> et <strong>organisation</strong> — exactement ce que propose la FIT.</p>
+                <p>Le format 40% en hybride correspond parfaitement à mon organisation actuelle et me permettrait de m'investir pleinement dans vos missions tout en maintenant une activité complémentaire.</p>
+                <div class="motivation-points">
+                    <div class="motivation-point">
+                        <span class="icon">🚀</span>
+                        <span>Passionnée par l'innovation et les nouvelles technologies</span>
+                    </div>
+                    <div class="motivation-point">
+                        <span class="icon">✍️</span>
+                        <span>Forte capacité rédactionnelle FR/EN</span>
+                    </div>
+                    <div class="motivation-point">
+                        <span class="icon">🎯</span>
+                        <span>Autonome, organisée, orientée résultats</span>
+                    </div>
+                    <div class="motivation-point">
+                        <span class="icon">🤝</span>
+                        <span>Habituée au travail hybride et collaboratif</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CTA -->
+    <div class="container">
+        <div class="cta">
+            <h2>Discutons de votre besoin</h2>
+            <p>Je suis disponible pour un entretien à votre convenance.</p>
+            <div class="cta-buttons">
+                <a href="mailto:communication@fondation-fit.ch?subject=Candidature Assistante Communication %26 Admin — Sonia Catic&body=Bonjour,%0D%0A%0D%0AJe me permets de vous adresser ma candidature pour le poste d'Assistante Communication %26 Admin (40%25).%0D%0A%0D%0AVous trouverez mon dossier complet sur cette page : [LIEN]%0D%0A%0D%0AJe reste à votre disposition pour un entretien.%0D%0A%0D%0ABien cordialement,%0D%0ASonia Catic%0D%0A078 777 79 78" class="btn btn-primary">📩 Envoyer ma candidature</a>
+                <a href="tel:+41787777978" class="btn btn-secondary">📞 078 777 79 78</a>
+            </div>
+            <div class="cta-info">
+                <span>📍 Frontalière FR/CH</span>
+                <span>📅 Disponible immédiatement</span>
+                <span>✅ Permis G valide</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Sonia Catic · Candidature Fondation pour l'innovation et la technologie (FIT)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
