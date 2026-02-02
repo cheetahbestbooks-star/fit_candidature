@@ -223,15 +223,6 @@
             box-shadow: 0 10px 30px rgba(0, 166, 118, 0.1);
         }
 
-        .match-card .need {
-            font-size: 11px;
-            font-weight: 600;
-            color: var(--text-light);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
         .match-card h3 {
             font-size: 16px;
             font-weight: 700;
@@ -239,15 +230,15 @@
             margin-bottom: 12px;
         }
 
+        .match-card h3 .check {
+            color: var(--accent);
+            margin-right: 4px;
+        }
+
         .match-card p {
             font-size: 13px;
             color: var(--text);
             line-height: 1.6;
-        }
-
-        .match-card .check {
-            color: var(--accent);
-            font-weight: 700;
         }
 
         /* EXPERIENCE */
@@ -347,7 +338,39 @@
         }
 
         .lang-flag {
-            font-size: 24px;
+            width: 24px;
+            height: auto;
+        }
+
+        .cert-link {
+            text-decoration: none;
+            margin-left: 8px;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .cert-link:hover {
+            transform: scale(1.2);
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .cv-download:hover {
+            background: #008F63;
+            transform: translateY(-2px);
         }
 
         .lang-info .name {
@@ -560,7 +583,7 @@
                 <span class="dot"></span>
                 Candidature — Assistante Communication & Admin (40%)
             </div>
-            <h1>Bonjour<span>le serice RH pour la Fondation de l'Innovation et de la Technologie</span></h1>
+            <h1>Bonjour <span>FIT</span> 👋</h1>
             <p class="header-subtitle">+7 ans d'expérience en communication digitale et administration en Suisse. Prête à contribuer à l'essor des start-ups romandes innovantes.</p>
             <div class="header-meta">
                 <span>📍 Frontalière FR/CH — Permis G</span>
@@ -584,6 +607,7 @@
                     <span class="tag outline">📧 sonia.catic@hotmail.com</span>
                     <span class="tag outline">📞 078 777 79 78</span>
                 </div>
+                <a href="https://cheetahbestbooks-star.github.io/poste_admin/CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Télécharger mon CV (PDF)</a>
             </div>
         </div>
     </div>
@@ -594,34 +618,28 @@
             <div class="section-title">🎯 Pourquoi je corresponds au poste</div>
             <div class="match-grid">
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Rédaction de contenu FR/EN</h3>
-                    <p><span class="check">✓</span> Master en Communication & Digital Marketing (EFAP Paris). Rédaction d'articles web, newsletters, communiqués depuis 7+ ans. Bilingue français/anglais.</p>
+                    <h3><span class="check">✓</span> Rédaction de contenu FR/EN</h3>
+                    <p>Master en Communication & Digital Marketing (EFAP Paris). Rédaction d'articles web, newsletters, communiqués depuis 7+ ans. Bilingue français/anglais.</p>
                 </div>
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Création contenu réseaux sociaux</h3>
-                    <p><span class="check">✓</span> Gestion LinkedIn & Instagram pro. Création visuels (Canva, CapCut). +60% d'engagement obtenu chez Buzz Beauty.</p>
+                    <h3><span class="check">✓</span> Création contenu réseaux sociaux</h3>
+                    <p>Gestion LinkedIn & Instagram pro. Création visuels (Canva, CapCut). +60% d'engagement obtenu chez Buzz Beauty.</p>
                 </div>
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Suivi administratif de projets</h3>
-                    <p><span class="check">✓</span> Coordination de dossiers, rédaction PV, organisation comités. 4 ans d'expérience admin en Suisse (Sandoz, Plastrub).</p>
+                    <h3><span class="check">✓</span> Suivi administratif de projets</h3>
+                    <p>Coordination de dossiers, rédaction PV, organisation comités. 4 ans d'expérience admin en Suisse (Sandoz, Plastrub).</p>
                 </div>
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Organisation d'événements</h3>
-                    <p><span class="check">✓</span> Coordination logistique, gestion partenaires, suivi planning. Expérience événementiel chez Buzz Beauty et en freelance.</p>
+                    <h3><span class="check">✓</span> Organisation d'événements</h3>
+                    <p>Coordination logistique, gestion partenaires, suivi planning. Expérience événementiel chez Buzz Beauty et en freelance.</p>
                 </div>
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Mise à jour site internet</h3>
-                    <p><span class="check">✓</span> À l'aise avec les CMS (WordPress, Shopify). Intégration de contenus, mise en page, optimisation SEO de base.</p>
+                    <h3><span class="check">✓</span> Mise à jour site internet</h3>
+                    <p>À l'aise avec les CMS (WordPress, Shopify). Intégration de contenus, mise en page, optimisation SEO de base.</p>
                 </div>
                 <div class="match-card">
-                    <div class="need">Vous cherchez</div>
-                    <h3>Autonomie & initiative</h3>
-                    <p><span class="check">✓</span> 3 ans en freelance 100% remote. Habituée à gérer mes priorités, proposer des améliorations, livrer dans les délais.</p>
+                    <h3><span class="check">✓</span> Autonomie & initiative</h3>
+                    <p>3 ans en freelance 100% remote. Habituée à gérer mes priorités, proposer des améliorations, livrer dans les délais.</p>
                 </div>
             </div>
         </section>
@@ -650,7 +668,7 @@
                 </div>
                 <div class="exp-card">
                     <div>
-                        <h3>Administratrice des ventes</h3>
+                        <h3>Administratrice des ventes <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_PLASTRUB.pdf" target="_blank" class="cert-link" title="Voir certificat de travail">📄</a></h3>
                         <p class="company">Plastrub SA • Fribourg</p>
                         <p class="tasks">Gestion administrative commerciale, suivi dossiers clients internationaux, coordination logistique, rédaction documents, reporting.</p>
                     </div>
@@ -658,7 +676,7 @@
                 </div>
                 <div class="exp-card">
                     <div>
-                        <h3>Collaboratrice Achat/Vente</h3>
+                        <h3>Collaboratrice Achat/Vente <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_SANDOZ.pdf" target="_blank" class="cert-link" title="Voir certificat de travail">📄</a></h3>
                         <p class="company">Sandoz Fils SA • Fribourg</p>
                         <p class="tasks">Administration des ventes, suivi commandes, relation fournisseurs, PV de réunions, reporting direction.</p>
                     </div>
@@ -713,28 +731,28 @@
             <div class="section-title">🌍 Langues</div>
             <div class="lang-grid">
                 <div class="lang-item">
-                    <span class="lang-flag">🇫🇷</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/23px-Flag_of_France.svg.png" alt="FR" class="lang-flag">
                     <div class="lang-info">
                         <div class="name">Français</div>
                         <div class="level">Langue maternelle</div>
                     </div>
                 </div>
                 <div class="lang-item">
-                    <span class="lang-flag">🇬🇧</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/23px-Flag_of_the_United_Kingdom.svg.png" alt="EN" class="lang-flag">
                     <div class="lang-info">
                         <div class="name">Anglais</div>
                         <div class="level">C1 — Courant professionnel</div>
                     </div>
                 </div>
                 <div class="lang-item">
-                    <span class="lang-flag">🇩🇪</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/23px-Flag_of_Germany.svg.png" alt="DE" class="lang-flag">
                     <div class="lang-info">
                         <div class="name">Allemand</div>
                         <div class="level">B1 — Intermédiaire</div>
                     </div>
                 </div>
                 <div class="lang-item">
-                    <span class="lang-flag">🇪🇸</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Spain.svg/23px-Flag_of_Spain.svg.png" alt="ES" class="lang-flag">
                     <div class="lang-info">
                         <div class="name">Espagnol</div>
                         <div class="level">B2</div>
@@ -751,13 +769,13 @@
             <div class="formation-list">
                 <div class="formation-item">
                     <div>
-                        <h4>Master 1 Communication & Digital Marketing</h4>
+                        <h4>Master 1 Communication & Digital Marketing <a href="https://cheetahbestbooks-star.github.io/poste_admin/Master1_sonia.pdf" target="_blank" class="cert-link" title="Voir diplôme">🎓</a></h4>
                         <p>EFAP Paris — École des métiers de la communication</p>
                     </div>
                 </div>
                 <div class="formation-item">
                     <div>
-                        <h4>Bachelor Arts & Sciences Humaines</h4>
+                        <h4>Bachelor Arts & Sciences Humaines <a href="https://cheetahbestbooks-star.github.io/poste_admin/Licence_sonia.pdf" target="_blank" class="cert-link" title="Voir diplôme">🎓</a></h4>
                         <p>Option Journalisme — Université de Nice</p>
                     </div>
                 </div>
