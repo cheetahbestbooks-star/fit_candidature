@@ -234,6 +234,15 @@
             object-fit: cover;
             border: 4px solid var(--bg);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .intro-photo:hover {
+            transform: scale(2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            position: relative;
         }
 
         .intro-content h2 {
@@ -298,6 +307,14 @@
         .cv-download:hover {
             background: #008F63;
             transform: translateY(-2px);
+        }
+
+        .cv-download.lettre {
+            background: var(--primary);
+        }
+
+        .cv-download.lettre:hover {
+            background: var(--primary-light);
         }
 
         /* SECTIONS */
@@ -1004,7 +1021,7 @@
     <!-- INTRO CARD -->
     <div class="container">
         <div class="intro-card">
-            <img src="photosonia.jpg" alt="Sonia Catic" class="intro-photo">
+            <img src="https://cheetahbestbooks-star.github.io/poste_admin/photosonia.jpg" alt="Sonia Catic" class="intro-photo">
             <div class="intro-content">
                 <h2></h2>
                 <p>Communication digitale • Rédaction FR/EN • Administration • Réseaux sociaux • Organisation d'événements</p>
@@ -1012,7 +1029,10 @@
                     <span class="tag green">✓ Permis G valide</span>
                     <span class="tag green">✓ Français natif</span>
                     <span class="tag green">✓ Anglais C1</span>
-                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Télécharger mon CV</a>
+                </div>
+                <div class="intro-tags">
+                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Mon CV</a>
+                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/Sonia_CATIC_Lettre_FIT.pdf" target="_blank" class="cv-download lettre">✉️ Ma lettre de motivation</a>
                 </div>
                 <div class="intro-tags" style="margin-bottom: 0;">
                     <span class="tag outline">📧 sonia.catic@hotmail.com</span>
@@ -1255,7 +1275,7 @@
     <!-- CTA -->
     <div class="container">
         <div class="cta" id="contact">
-            <h2>Envie d'en savoir plus ?</h2>
+            <h2>Contactez-moi</h2>
             <p>Je serais ravie d'échanger avec vous sur ce poste.</p>
             <div class="cta-buttons">
                 <a href="mailto:sonia.catic@hotmail.com?subject=Candidature Assistante Communication %26 Admin — FIT&body=Bonjour Sonia,%0D%0A%0D%0A" class="btn btn-primary">📧 sonia.catic@hotmail.com</a>
