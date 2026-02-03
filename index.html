@@ -26,6 +26,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--bg);
@@ -131,6 +135,40 @@
 
         .burger-menu a .menu-icon {
             margin-right: 10px;
+        }
+
+        /* BACK TO TOP BUTTON */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 166, 118, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: #008F63;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 166, 118, 0.5);
         }
 
         /* HEADER */
@@ -320,6 +358,7 @@
         /* SECTIONS */
         .section {
             padding: 60px 0;
+            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -646,6 +685,7 @@
             text-align: center;
             margin: 40px 0 60px;
             border: 1px solid var(--border);
+            scroll-margin-top: 80px;
         }
 
         .cta h2 {
@@ -770,6 +810,10 @@
                 height: 120px;
             }
 
+            .intro-photo:hover {
+                transform: scale(1.5);
+            }
+
             .intro-content p {
                 font-size: 13px;
             }
@@ -793,6 +837,7 @@
 
             .section {
                 padding: 40px 0;
+                scroll-margin-top: 70px;
             }
 
             .section-title {
@@ -924,6 +969,7 @@
             .cta {
                 padding: 32px 20px;
                 margin: 30px 0 40px;
+                scroll-margin-top: 70px;
             }
 
             .cta h2 {
@@ -954,6 +1000,15 @@
             footer {
                 padding: 24px 0;
                 font-size: 12px;
+            }
+
+            /* Back to top mobile */
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
             }
         }
 
@@ -992,17 +1047,22 @@
 
     <!-- BURGER MENU -->
     <div class="burger-menu" id="burgerMenu">
-        <a href="#points-forts"><span class="menu-icon">🎯</span> Points forts</a>
-        <a href="#parcours"><span class="menu-icon">💼</span> Parcours professionnel</a>
-        <a href="#competences"><span class="menu-icon">🛠️</span> Compétences</a>
-        <a href="#langues"><span class="menu-icon">🌍</span> Langues</a>
-        <a href="#formation"><span class="menu-icon">🎓</span> Formation</a>
-        <a href="#motivation"><span class="menu-icon">💡</span> Motivation</a>
-        <a href="#contact"><span class="menu-icon">📩</span> Contact</a>
+        <a href="#section-points-forts"><span class="menu-icon">🎯</span> Points forts</a>
+        <a href="#section-parcours"><span class="menu-icon">💼</span> Parcours professionnel</a>
+        <a href="#section-competences"><span class="menu-icon">🛠️</span> Compétences</a>
+        <a href="#section-langues"><span class="menu-icon">🌍</span> Langues</a>
+        <a href="#section-formation"><span class="menu-icon">🎓</span> Formation</a>
+        <a href="#section-motivation"><span class="menu-icon">💡</span> Motivation</a>
+        <a href="#section-contact"><span class="menu-icon">📩</span> Contact</a>
     </div>
 
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="Retour en haut">
+        ↑
+    </button>
+
     <!-- HEADER -->
-    <header>
+    <header id="top">
         <div class="container">
             <div class="header-badge">
                 <span class="dot"></span>
@@ -1031,8 +1091,8 @@
                     <span class="tag green">✓ Anglais C1</span>
                 </div>
                 <div class="intro-tags">
-                    <a href="CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Mon CV</a>
-                    <a href="Sonia_CATIC_Lettre_FIT.pdf" target="_blank" class="cv-download lettre">✉️ Ma lettre de motivation</a>
+                    <a href="CV_Sonia_Catic_FIT.pdf" target="_blank" class="cv-download">📄 Mon CV</a>
+                    <a href="Sonia CATIC Lettre FIT.pdf" target="_blank" class="cv-download lettre">✉️ Ma lettre de motivation</a>
                 </div>
                 <div class="intro-tags" style="margin-bottom: 0;">
                     <span class="tag outline">📧 sonia.catic@hotmail.com</span>
@@ -1044,7 +1104,7 @@
 
     <!-- MATCH SECTION -->
     <div class="container">
-        <section class="section" id="points-forts">
+        <section class="section" id="section-points-forts">
             <div class="section-title">🎯 Points forts</div>
             <div class="match-grid">
                 <div class="match-card">
@@ -1077,7 +1137,7 @@
 
     <!-- EXPERIENCE -->
     <div class="container">
-        <section class="section" style="padding-top: 0;" id="parcours">
+        <section class="section" style="padding-top: 0;" id="section-parcours">
             <div class="section-title">💼 Parcours professionnel</div>
             <div class="exp-list">
                 <div class="exp-card">
@@ -1137,7 +1197,7 @@
 
     <!-- SKILLS -->
     <div class="container">
-        <section class="section" style="padding-top: 0;" id="competences">
+        <section class="section" style="padding-top: 0;" id="section-competences">
             <div class="section-title">🛠️ Compétences clés</div>
             <div class="skills-grid">
                 <div class="skill-card">
@@ -1176,7 +1236,7 @@
 
     <!-- LANGUES -->
     <div class="container">
-        <section class="section" style="padding-top: 0;" id="langues">
+        <section class="section" style="padding-top: 0;" id="section-langues">
             <div class="section-title">🌍 Langues</div>
             <div class="lang-grid">
                 <div class="lang-item">
@@ -1213,7 +1273,7 @@
 
     <!-- FORMATION -->
     <div class="container">
-        <section class="section" style="padding-top: 0;" id="formation">
+        <section class="section" style="padding-top: 0;" id="section-formation">
             <div class="section-title">🎓 Formation</div>
             <div class="formation-list">
                 <div class="formation-item">
@@ -1246,7 +1306,7 @@
 
     <!-- MOTIVATION -->
     <div class="container">
-        <section class="section" style="padding-top: 0;" id="motivation">
+        <section class="section" style="padding-top: 0;" id="section-motivation">
             <div class="motivation-box">
                 <h3>💡 Pourquoi la Fondation pour l'Innovation et la Technologie m'intéresse</h3>
                 <p>Accompagner des start-ups innovantes, c'est contribuer à façonner l'économie de demain. Après 7 ans dans le digital et l'administration en Suisse, je cherche un poste qui allie <strong>communication</strong>, <strong>rédaction</strong> et <strong>organisation</strong>, exactement ce que propose la Fondation pour l'Innovation et la Technologie.</p>
@@ -1274,8 +1334,8 @@
 
     <!-- CTA -->
     <div class="container">
-        <div class="cta" id="contact">
-            <h2>Envie d'en savoir plus ?</h2>
+        <div class="cta" id="section-contact">
+            <h2>Contactez-moi</h2>
             <p>Je serais ravie d'échanger avec vous sur ce poste.</p>
             <div class="cta-buttons">
                 <a href="mailto:sonia.catic@hotmail.com?subject=Candidature Assistante Communication %26 Admin — FIT&body=Bonjour Sonia,%0D%0A%0D%0A" class="btn btn-primary">📧 sonia.catic@hotmail.com</a>
@@ -1297,6 +1357,7 @@
     </footer>
 
     <script>
+        // Toggle burger menu
         function toggleMenu() {
             const menu = document.getElementById('burgerMenu');
             menu.classList.toggle('active');
@@ -1317,6 +1378,24 @@
                 menu.classList.remove('active');
             }
         });
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
     </script>
 
 </body>
