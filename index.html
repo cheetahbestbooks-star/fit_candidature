@@ -39,11 +39,105 @@
             padding: 0 24px;
         }
 
+        /* BURGER MENU */
+        .burger-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 76, 129, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 12px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .burger-logo {
+            font-weight: 700;
+            font-size: 16px;
+            color: white;
+        }
+
+        .burger-logo span {
+            color: var(--accent);
+        }
+
+        .burger-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 10px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .burger-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .burger-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        .burger-menu {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(15, 76, 129, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 20px;
+            transform: translateY(-120%);
+            transition: transform 0.3s ease;
+            z-index: 999;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .burger-menu.active {
+            transform: translateY(0);
+        }
+
+        .burger-menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .burger-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .burger-menu a:hover {
+            background: rgba(255,255,255,0.1);
+            padding-left: 24px;
+        }
+
+        .burger-menu a .menu-icon {
+            margin-right: 10px;
+        }
+
         /* HEADER */
         header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            padding: 60px 0 80px;
+            padding: 100px 0 80px;
             position: relative;
             overflow: hidden;
         }
@@ -155,28 +249,55 @@
             margin-bottom: 16px;
         }
 
+        /* TAGS HARMONISÉS */
         .intro-tags {
             display: flex;
-            gap: 8px;
+            gap: 10px;
             flex-wrap: wrap;
+            margin-bottom: 16px;
         }
 
         .tag {
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 13px;
             font-weight: 600;
+            height: 42px;
         }
 
         .tag.green {
             background: var(--accent-light);
             color: var(--accent);
+            border: 1px solid rgba(0, 166, 118, 0.2);
         }
 
         .tag.outline {
-            background: transparent;
+            background: var(--bg);
             border: 1px solid var(--border);
-            color: var(--text-light);
+            color: var(--text);
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+            height: 42px;
+        }
+
+        .cv-download:hover {
+            background: #008F63;
+            transform: translateY(-2px);
         }
 
         /* SECTIONS */
@@ -264,6 +385,9 @@
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .exp-card .company {
@@ -286,6 +410,44 @@
             font-weight: 600;
             color: var(--text-light);
             white-space: nowrap;
+        }
+
+        /* LIENS EXPERIENCE */
+        .exp-links {
+            display: flex;
+            gap: 12px;
+            margin-left: auto;
+        }
+
+        .exp-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 20px;
+        }
+
+        .exp-link:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 166, 118, 0.2);
+        }
+
+        .exp-link.instagram:hover {
+            border-color: #E1306C;
+            background: #fce4ec;
+        }
+
+        .exp-link img {
+            width: 22px;
+            height: 22px;
         }
 
         /* SKILLS */
@@ -342,37 +504,6 @@
             height: auto;
         }
 
-        .cert-link {
-            text-decoration: none;
-            margin-left: 8px;
-            transition: transform 0.2s;
-            display: inline-block;
-        }
-
-        .cert-link:hover {
-            transform: scale(1.2);
-        }
-
-        .cv-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 16px;
-            padding: 10px 20px;
-            background: var(--accent);
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .cv-download:hover {
-            background: #008F63;
-            transform: translateY(-2px);
-        }
-
         .lang-info .name {
             font-size: 14px;
             font-weight: 700;
@@ -384,7 +515,7 @@
             color: var(--text-light);
         }
 
-        /* FORMATION */
+        /* FORMATION - NOUVEAU STYLE */
         .formation-list {
             display: flex;
             flex-direction: column;
@@ -396,21 +527,53 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 20px 24px;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 16px;
             align-items: center;
         }
 
-        .formation-item h4 {
+        .formation-item .formation-info h4 {
             font-size: 15px;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 4px;
         }
 
-        .formation-item p {
+        .formation-item .formation-info p {
             font-size: 13px;
             color: var(--text-light);
+        }
+
+        .formation-date {
+            background: var(--bg);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-light);
+            white-space: nowrap;
+        }
+
+        .formation-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 22px;
+        }
+
+        .formation-link:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 166, 118, 0.2);
         }
 
         /* MOTIVATION */
@@ -539,42 +702,287 @@
             border-top: 1px solid var(--border);
         }
 
-        /* RESPONSIVE */
+        /* ======================= */
+        /* RESPONSIVE MOBILE */
+        /* ======================= */
         @media (max-width: 768px) {
+            .burger-nav {
+                padding: 10px 16px;
+            }
+
+            .burger-logo {
+                font-size: 14px;
+            }
+
+            header {
+                padding: 80px 0 60px;
+            }
+
             header h1 {
                 font-size: 28px;
+            }
+
+            .header-subtitle {
+                font-size: 15px;
+            }
+
+            .header-meta {
+                gap: 12px;
+                font-size: 12px;
+            }
+
+            .header-badge {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .container {
+                padding: 0 16px;
             }
 
             .intro-card {
                 grid-template-columns: 1fr;
                 text-align: center;
+                padding: 24px;
+                margin-top: -40px;
             }
 
             .intro-photo {
                 margin: 0 auto;
+                width: 120px;
+                height: 120px;
+            }
+
+            .intro-content p {
+                font-size: 13px;
             }
 
             .intro-tags {
                 justify-content: center;
+                gap: 8px;
             }
 
-            .match-grid,
-            .skills-grid,
-            .motivation-points {
+            .tag {
+                padding: 8px 12px;
+                font-size: 11px;
+                height: 36px;
+            }
+
+            .cv-download {
+                width: 100%;
+                justify-content: center;
+                height: 44px;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .section-title {
+                font-size: 12px;
+            }
+
+            .match-grid {
                 grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .match-card {
+                padding: 20px;
+            }
+
+            .match-card h3 {
+                font-size: 14px;
+            }
+
+            .match-card p {
+                font-size: 12px;
             }
 
             .exp-card {
                 grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .exp-card h3 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .exp-links {
+                margin-left: 0;
             }
 
             .exp-date {
                 width: fit-content;
+                margin-top: 12px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .skill-card {
+                padding: 16px;
+            }
+
+            .skill-icon {
+                font-size: 24px;
+            }
+
+            .skill-card h4 {
+                font-size: 13px;
+            }
+
+            .skill-card p {
+                font-size: 11px;
+            }
+
+            .lang-grid {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .lang-item {
+                padding: 14px 18px;
+            }
+
+            .formation-item {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 18px;
+            }
+
+            .formation-item .formation-info h4 {
+                font-size: 14px;
+            }
+
+            .formation-item .formation-info p {
+                font-size: 12px;
+            }
+
+            .formation-actions {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .formation-date {
+                font-size: 11px;
+            }
+
+            .formation-link {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .motivation-box {
+                padding: 28px 20px;
+            }
+
+            .motivation-box h3 {
+                font-size: 18px;
+            }
+
+            .motivation-box p {
+                font-size: 14px;
+            }
+
+            .motivation-points {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .motivation-point {
+                padding: 14px;
+            }
+
+            .motivation-point span {
+                font-size: 13px;
+            }
+
+            .cta {
+                padding: 32px 20px;
+                margin: 30px 0 40px;
+            }
+
+            .cta h2 {
+                font-size: 22px;
+            }
+
+            .cta p {
+                font-size: 14px;
+                margin-bottom: 24px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+
+            .cta-info {
+                gap: 16px;
+                font-size: 12px;
+            }
+
+            footer {
+                padding: 24px 0;
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tag {
+                padding: 6px 10px;
+                font-size: 10px;
+                height: 32px;
+            }
+
+            .intro-tags {
+                gap: 6px;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- BURGER NAV -->
+    <nav class="burger-nav">
+        <div class="burger-logo">Sonia <span>CATIC</span></div>
+        <button class="burger-btn" onclick="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- BURGER MENU -->
+    <div class="burger-menu" id="burgerMenu">
+        <a href="#points-forts"><span class="menu-icon">🎯</span> Points forts</a>
+        <a href="#parcours"><span class="menu-icon">💼</span> Parcours professionnel</a>
+        <a href="#competences"><span class="menu-icon">🛠️</span> Compétences</a>
+        <a href="#langues"><span class="menu-icon">🌍</span> Langues</a>
+        <a href="#formation"><span class="menu-icon">🎓</span> Formation</a>
+        <a href="#motivation"><span class="menu-icon">💡</span> Motivation</a>
+        <a href="#contact"><span class="menu-icon">📩</span> Contact</a>
+    </div>
 
     <!-- HEADER -->
     <header>
@@ -604,17 +1012,19 @@
                     <span class="tag green">✓ Permis G valide</span>
                     <span class="tag green">✓ Français natif</span>
                     <span class="tag green">✓ Anglais C1</span>
+                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Télécharger mon CV</a>
+                </div>
+                <div class="intro-tags" style="margin-bottom: 0;">
                     <span class="tag outline">📧 sonia.catic@hotmail.com</span>
                     <span class="tag outline">📞 078 777 79 78</span>
                 </div>
-                <a href="https://cheetahbestbooks-star.github.io/poste_admin/CV_FIT_Sonia_Catic.pdf" target="_blank" class="cv-download">📄 Télécharger mon CV (PDF)</a>
             </div>
         </div>
     </div>
 
     <!-- MATCH SECTION -->
     <div class="container">
-        <section class="section">
+        <section class="section" id="points-forts">
             <div class="section-title">🎯 Points forts</div>
             <div class="match-grid">
                 <div class="match-card">
@@ -647,12 +1057,17 @@
 
     <!-- EXPERIENCE -->
     <div class="container">
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top: 0;" id="parcours">
             <div class="section-title">💼 Parcours professionnel</div>
             <div class="exp-list">
                 <div class="exp-card">
                     <div>
-                        <h3>Freelance — Communication & Automation</h3>
+                        <h3>
+                            <span>Freelance — Communication & Automation</span>
+                            <div class="exp-links">
+                                <a href="https://cheetahbestbooks-star.github.io/poste_admin/LettreDeRecommandation_PalaisFestivals.pdf" target="_blank" class="exp-link" title="Voir lettre de recommandation Palais des Festivals">📄</a>
+                            </div>
+                        </h3>
                         <p class="company">Clients B2C & B2B • Remote</p>
                         <p class="tasks">Rédaction de contenus web et emails, création visuels réseaux sociaux, gestion de projets clients, automatisation administrative (Airtable, Make). Gestion autonome multi-clients.</p>
                     </div>
@@ -660,7 +1075,14 @@
                 </div>
                 <div class="exp-card">
                     <div>
-                        <h3>Coordinatrice Digitale & Ventes</h3>
+                        <h3>
+                            <span>Coordinatrice Digitale & Ventes</span>
+                            <div class="exp-links">
+                                <a href="https://www.instagram.com/buzzbeauty.ch/" target="_blank" class="exp-link instagram" title="Voir Instagram Buzz Beauty">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png" alt="Instagram">
+                                </a>
+                            </div>
+                        </h3>
                         <p class="company">Buzz Beauty — Plateforme beauté/bien-être • Fribourg</p>
                         <p class="tasks">Stratégie réseaux sociaux (+60% engagement), rédaction newsletters et contenus web, coordination partenaires, organisation événements promo, SAV clients.</p>
                     </div>
@@ -668,7 +1090,12 @@
                 </div>
                 <div class="exp-card">
                     <div>
-                        <h3>Administratrice des ventes <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_PLASTRUB.pdf" target="_blank" class="cert-link" title="Voir certificat de travail">📄</a></h3>
+                        <h3>
+                            <span>Administratrice des ventes</span>
+                            <div class="exp-links">
+                                <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_PLASTRUB.pdf" target="_blank" class="exp-link" title="Voir certificat de travail">📄</a>
+                            </div>
+                        </h3>
                         <p class="company">Plastrub SA • Fribourg</p>
                         <p class="tasks">Gestion administrative commerciale, suivi dossiers clients internationaux, coordination logistique, rédaction documents, reporting.</p>
                     </div>
@@ -676,7 +1103,12 @@
                 </div>
                 <div class="exp-card">
                     <div>
-                        <h3>Collaboratrice Achat/Vente <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_SANDOZ.pdf" target="_blank" class="cert-link" title="Voir certificat de travail">📄</a></h3>
+                        <h3>
+                            <span>Collaboratrice Achat/Vente</span>
+                            <div class="exp-links">
+                                <a href="https://cheetahbestbooks-star.github.io/poste_admin/CERTIFICAT_SANDOZ.pdf" target="_blank" class="exp-link" title="Voir certificat de travail">📄</a>
+                            </div>
+                        </h3>
                         <p class="company">Sandoz Fils SA • Fribourg</p>
                         <p class="tasks">Administration des ventes, suivi commandes, relation fournisseurs, PV de réunions, reporting direction.</p>
                     </div>
@@ -688,7 +1120,7 @@
 
     <!-- SKILLS -->
     <div class="container">
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top: 0;" id="competences">
             <div class="section-title">🛠️ Compétences clés</div>
             <div class="skills-grid">
                 <div class="skill-card">
@@ -719,7 +1151,7 @@
                 <div class="skill-card">
                     <div class="skill-icon">⚙️</div>
                     <h4>Outils digitaux</h4>
-                    <p>Suite Office, Google, Airtable, Make</p>
+                    <p>Suite Office, Google, Airtable, Make, Notes</p>
                 </div>
             </div>
         </section>
@@ -727,7 +1159,7 @@
 
     <!-- LANGUES -->
     <div class="container">
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top: 0;" id="langues">
             <div class="section-title">🌍 Langues</div>
             <div class="lang-grid">
                 <div class="lang-item">
@@ -764,26 +1196,32 @@
 
     <!-- FORMATION -->
     <div class="container">
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top: 0;" id="formation">
             <div class="section-title">🎓 Formation</div>
             <div class="formation-list">
                 <div class="formation-item">
-                    <div>
-                        <h4>Master 1 Communication & Marketing Digital <a href="https://cheetahbestbooks-star.github.io/poste_admin/Master1_sonia.pdf" target="_blank" class="cert-link" title="Voir diplôme">🎓</a></h4>
+                    <div class="formation-info">
+                        <h4>Master 1 Communication & Marketing Digital</h4>
                         <p>EFAP Paris — École des métiers de la communication</p>
                     </div>
+                    <span class="formation-date">2006</span>
+                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/Master1_sonia.pdf" target="_blank" class="formation-link" title="Voir diplôme">🎓</a>
                 </div>
                 <div class="formation-item">
-                    <div>
-                        <h4>Licence Arts & Sciences Humaines <a href="https://cheetahbestbooks-star.github.io/poste_admin/Licence_sonia.pdf" target="_blank" class="cert-link" title="Voir diplôme">🎓</a></h4>
+                    <div class="formation-info">
+                        <h4>Licence Arts & Sciences Humaines</h4>
                         <p>Option Journalisme — Université de Nice</p>
                     </div>
+                    <span class="formation-date">2004</span>
+                    <a href="https://cheetahbestbooks-star.github.io/poste_admin/Licence_sonia.pdf" target="_blank" class="formation-link" title="Voir diplôme">🎓</a>
                 </div>
                 <div class="formation-item">
-                    <div>
+                    <div class="formation-info">
                         <h4>Baccalauréat Littéraire</h4>
                         <p>Lycée Bristol, Cannes</p>
                     </div>
+                    <span class="formation-date">2001</span>
+                    <div style="width: 44px;"></div>
                 </div>
             </div>
         </section>
@@ -791,7 +1229,7 @@
 
     <!-- MOTIVATION -->
     <div class="container">
-        <section class="section" style="padding-top: 0;">
+        <section class="section" style="padding-top: 0;" id="motivation">
             <div class="motivation-box">
                 <h3>💡 Pourquoi la Fondation pour l'Innovation et la Technologie m'intéresse</h3>
                 <p>Accompagner des start-ups innovantes, c'est contribuer à façonner l'économie de demain. Après 7 ans dans le digital et l'administration en Suisse, je cherche un poste qui allie <strong>communication</strong>, <strong>rédaction</strong> et <strong>organisation</strong>, exactement ce que propose la Fondation pour l'Innovation et la Technologie.</p>
@@ -819,11 +1257,11 @@
 
     <!-- CTA -->
     <div class="container">
-        <div class="cta">
+        <div class="cta" id="contact">
             <h2>Discutons de votre besoin</h2>
             <p>Je suis disponible pour un entretien à votre convenance.</p>
             <div class="cta-buttons">
-                <a href="mailto:communication@fondation-fit.ch?subject=Candidature Assistante Communication %26 Admin — Sonia Catic&body=Bonjour,%0D%0A%0D%0AJe me permets de vous adresser ma candidature pour le poste d'Assistante Communication %26 Admin (40%25).%0D%0A%0D%0AVous trouverez mon dossier complet sur cette page : [LIEN]%0D%0A%0D%0AJe reste à votre disposition pour un entretien.%0D%0A%0D%0ABien cordialement,%0D%0ASonia Catic%0D%0A078 777 79 78" class="btn btn-primary">📩 Envoyer ma candidature</a>
+                <a href="mailto:sonia.catic@hotmail.com?subject=Candidature Assistante Communication %26 Admin — FIT&body=Bonjour Sonia,%0D%0A%0D%0A" class="btn btn-primary">📧 sonia.catic@hotmail.com</a>
                 <a href="tel:+41787777978" class="btn btn-secondary">📞 078 777 79 78</a>
             </div>
             <div class="cta-info">
@@ -840,6 +1278,29 @@
             <p>© 2026 Sonia Catic · Candidature Fondation pour l'innovation et la technologie (FIT)</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('burgerMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Fermer le menu quand on clique sur un lien
+        document.querySelectorAll('.burger-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('burgerMenu').classList.remove('active');
+            });
+        });
+
+        // Fermer le menu quand on clique ailleurs
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('burgerMenu');
+            const btn = document.querySelector('.burger-btn');
+            if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>
